@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apoleez – Granizados Artesanales</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">apoleez<span>❄</span></div>
+  <ul>
+    <li><a href="#menu">Menú</a></li>
+    <li><a href="#proceso">¿Cómo funciona?</a></li>
+    <li><a href="#arma">Arma el tuyo</a></li>
+    <li><a href="#opiniones">Opiniones</a></li>
+  </ul>
+  <a href="#arma" class="nav-btn">Pedir ahora</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-badge">🧊 Granizados artesanales desde 2018</div>
+  <h1>El frío que<br><span class="gradient">nunca olvidarás</span></h1>
+  <p class="hero-sub">Granizados artesanales preparados con frutas frescas, sabores únicos y la textura perfecta para cada momento.</p>
+  <div class="hero-btns">
+    <a href="#menu" class="btn-primary">Ver el menú</a>
+    <a href="#arma" class="btn-ghost">Arma el tuyo</a>
+  </div>
+  <div class="hero-visual">
+    <div class="orbit"><div class="orbit-dot"></div></div>
+    <div class="orbit orbit2"><div class="orbit-dot"></div></div>
+    <div class="cup-straw"></div>
+    <div class="cup-lid"></div>
+    <div class="cup-body">
+      <div class="ice ice1"></div>
+      <div class="ice ice2"></div>
+      <div class="ice ice3"></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item fade-in">
+    <div class="stat-num" data-target="30">0</div>
+    <div class="stat-label">Sabores disponibles</div>
+  </div>
+  <div class="stat-item fade-in">
+    <div class="stat-num" data-target="12000">0</div>
+    <div class="stat-label">Clientes felices</div>
+  </div>
+  <div class="stat-item fade-in">
+    <div class="stat-num" data-target="6">0</div>
+    <div class="stat-label">Años de experiencia</div>
+  </div>
+  <div class="stat-item fade-in">
+    <div class="stat-num" data-target="100">0</div>
+    <div class="stat-label">% ingredientes naturales</div>
+  </div>
+</div>
+
+<!-- MENU -->
+<section id="menu">
+  <div class="section-header fade-in">
+    <div class="section-tag">Nuestro menú</div>
+    <h2>Elige tu <span class="accent">sabor favorito</span></h2>
+  </div>
+  <div class="filter-tabs">
+    <button class="tab-btn active" data-filter="todos">Todos</button>
+    <button class="tab-btn" data-filter="frutal">Frutal</button>
+    <button class="tab-btn" data-filter="cremoso">Cremoso</button>
+    <button class="tab-btn" data-filter="tropical">Tropical</button>
+    <button class="tab-btn" data-filter="especial">Especial</button>
+  </div>
+  <div class="menu-grid" id="menuGrid"></div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="proceso">
+  <div class="section-header fade-in">
+    <div class="section-tag">Proceso</div>
+    <h2>¿Cómo lo <span class="accent">preparamos?</span></h2>
+  </div>
+  <div class="steps">
+    <div class="step fade-in">
+      <div class="step-icon">🍓</div>
+      <h3>Frutas frescas</h3>
+      <p>Seleccionamos ingredientes de temporada cada mañana</p>
+    </div>
+    <div class="step fade-in">
+      <div class="step-icon">🧊</div>
+      <h3>Granizado perfecto</h3>
+      <p>Hielo triturado a la textura ideal, sin aglomeraciones</p>
+    </div>
+    <div class="step fade-in">
+      <div class="step-icon">✨</div>
+      <h3>Mezcla artesanal</h3>
+      <p>Combinamos el sabor con nuestras salsas caseras</p>
+    </div>
+    <div class="step fade-in">
+      <div class="step-icon">🎉</div>
+      <h3>¡A disfrutar!</h3>
+      <p>Listo en menos de 2 minutos, fresco y delicioso</p>
+    </div>
+  </div>
+</section>
+
+<!-- BUILDER -->
+<section id="arma">
+  <div class="section-header fade-in">
+    <div class="section-tag">Personaliza</div>
+    <h2>Arma tu <span class="accent">granizado ideal</span></h2>
+  </div>
+  <div class="builder fade-in">
+    <div class="builder-step">
+      <div class="builder-label">1. Elige tu base</div>
+      <div class="option-group" id="baseGroup">
+        <button class="opt-btn selected" data-val="Fresa">🍓 Fresa</button>
+        <button class="opt-btn" data-val="Mango">🥭 Mango</button>
+        <button class="opt-btn" data-val="Limón">🍋 Limón</button>
+        <button class="opt-btn" data-val="Maracuyá">🍊 Maracuyá</button>
+        <button class="opt-btn" data-val="Coco">🥥 Coco</button>
+      </div>
+    </div>
+    <div class="builder-step">
+      <div class="builder-label">2. Elige un topping</div>
+      <div class="option-group" id="toppingGroup">
+        <button class="opt-btn selected" data-val="Chamoy">🌶️ Chamoy</button>
+        <button class="opt-btn" data-val="Leche condensada">🥛 Leche cond.</button>
+        <button class="opt-btn" data-val="Tamarindo">🍬 Tamarindo</button>
+        <button class="opt-btn" data-val="Sin topping">❌ Sin topping</button>
+      </div>
+    </div>
+    <div class="builder-step">
+      <div class="builder-label">3. Elige el tamaño</div>
+      <input type="range" class="size-slider" id="sizeSlider" min="0" max="2" step="1" value="1">
+      <div class="size-labels"><span>Pequeño $3.500</span><span>Mediano $5.000</span><span>Grande $7.000</span></div>
+    </div>
+    <div class="builder-preview">
+      <div class="preview-title">Tu granizado Apoleez</div>
+      <div class="preview-name" id="previewName">Fresa con Chamoy • Mediano</div>
+      <div class="preview-price" id="previewPrice">$5.000</div>
+    </div>
+    <button class="builder-cta" id="builderCta">🛒 Agregar al pedido</button>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="opiniones">
+  <div class="section-header fade-in">
+    <div class="section-tag">Opiniones</div>
+    <h2>Lo que dice <span class="accent">nuestra gente</span></h2>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card fade-in">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"El granizado de mango es increíble. La textura es perfecta y el sabor es muy natural. ¡Voy todos los fines de semana!"</p>
+      <div class="testi-author">
+        <div class="author-avatar av1">SC</div>
+        <div><div class="author-name">Sofía C.</div><div class="author-loc">📍 Bogotá</div></div>
+      </div>
+    </div>
+    <div class="testi-card fade-in">
+      <div class="stars">★★★★★</div>
+      <p class="testi-text">"Pedí el de maracuyá con chamoy y quedé enamorada. La combinación es perfecta y el precio súper razonable."</p>
+      <div class="testi-author">
+        <div class="author-avatar av2">LM</div>
+        <div><div class="author-name">Laura M.</div><div class="author-loc">📍 Medellín</div></div>
+      </div>
+    </div>
+    <div class="testi-card fade-in">
+      <div class="stars">★★★★☆</div>
+      <p class="testi-text">"Excelente atención y productos deliciosos. El granizado de coco es mi favorito para los días de calor."</p>
+      <div class="testi-author">
+        <div class="author-avatar av3">JR</div>
+        <div><div class="author-name">Julián R.</div><div class="author-loc">📍 Cali</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="cta">
+  <div class="section-header">
+    <h2>¿Listo para el<br><span class="accent">mejor granizado</span>?</h2>
+    <p>Personaliza, ordena y disfruta en minutos.</p>
+    <div class="cta-btns">
+      <a href="#arma" class="btn-primary">Armar mi granizado</a>
+      <a href="tel:+573001234567" class="btn-ghost">📞 Llamar ahora</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">apoleez ❄</div>
+  <div class="footer-links">
+    <a href="#">Inicio</a>
+    <a href="#">Menú</a>
+    <a href="#">Nosotros</a>
+    <a href="#">Contacto</a>
+  </div>
+  <div class="socials">
+    <a class="soc-btn" href="#">📸</a>
+    <a class="soc-btn" href="#">🐦</a>
+    <a class="soc-btn" href="#">💬</a>
+    <a class="soc-btn" href="#">📘</a>
+  </div>
+  <p style="margin-top:1.2rem">© 2024 Apoleez Granizados · Hecho con ❤️ y mucho hielo</p>
+</footer>
+
+<!-- TOAST -->
+<div id="toast">✅ ¡Agregado al pedido!</div>
+
+<script>
+/* ── PARTICLES ── */
+const canvas = document.getElementById('particles');
+const ctx = canvas.getContext('2d');
+let pw, ph, dots = [];
+
+function initCanvas() {
+  pw = canvas.width = window.innerWidth;
+  ph = canvas.height = window.innerHeight;
+}
+
+class Dot {
+  constructor() { this.reset(); }
+  reset() {
+    this.x = Math.random() * pw;
+    this.y = Math.random() * ph;
+    this.r = Math.random() * 2 + 0.5;
+    this.vx = (Math.random() - 0.5) * 0.4;
+    this.vy = (Math.random() - 0.5) * 0.4;
+    this.alpha = Math.random() * 0.5 + 0.2;
+    this.color = ['#00b4d8','#ff6b9d','#ffe66d','#6c5ce7'][Math.floor(Math.random()*4)];
+  }
+  update() {
+    this.x += this.vx; this.y += this.vy;
+    if (this.x < 0 || this.x > pw || this.y < 0 || this.y > ph) this.reset();
+  }
+  draw() {
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+    ctx.fillStyle = this.color;
+    ctx.globalAlpha = this.alpha;
+    ctx.fill();
+  }
+}
+
+function initDots() { dots = Array.from({length: 80}, () => new Dot()); }
+
+function animate() {
+  ctx.clearRect(0, 0, pw, ph);
+  ctx.globalAlpha = 1;
+  dots.forEach(d => { d.update(); d.draw(); });
+  // Connections
+  for (let i = 0; i < dots.length; i++) {
+    for (let j = i + 1; j < dots.length; j++) {
+      const dx = dots[i].x - dots[j].x, dy = dots[i].y - dots[j].y;
+      const dist = Math.sqrt(dx*dx + dy*dy);
+      if (dist < 100) {
+        ctx.beginPath();
+        ctx.moveTo(dots[i].x, dots[i].y);
+        ctx.lineTo(dots[j].x, dots[j].y);
+        ctx.strokeStyle = '#00b4d8';
+        ctx.globalAlpha = (1 - dist/100) * 0.12;
+        ctx.lineWidth = 0.5;
+        ctx.stroke();
+      }
+    }
+  }
+  requestAnimationFrame(animate);
+}
+
+initCanvas(); initDots(); animate();
+window.addEventListener('resize', () => { initCanvas(); initDots(); });
+
+/* ── MENU DATA ── */
+const items = [
+  { name: "Fresa Natural", desc: "Fresas frescas trituradas con hielo y un toque de limón", price: 5000, emoji: "🍓", cat: "frutal", badge: "fav", badgeText: "Favorito" },
+  { name: "Mango Loco", desc: "Mango maduro, chamoy y chile tajín para los valientes", price: 5500, emoji: "🥭", cat: "tropical", badge: "hot", badgeText: "🔥 Hot" },
+  { name: "Coco Cremoso", desc: "Base de coco con leche condensada y un toque dulce", price: 6000, emoji: "🥥", cat: "cremoso", badge: "new", badgeText: "Nuevo" },
+  { name: "Maracuyá Burst", desc: "Maracuyá tropical con sal y tajín, explosión de sabor", price: 5500, emoji: "🍊", cat: "tropical", badge: null },
+  { name: "Limón Tajín", desc: "Clásico granizado de limón con tajín artesanal", price: 4500, emoji: "🍋", cat: "frutal", badge: "fav", badgeText: "Favorito" },
+  { name: "Sandia Brisa", desc: "Sandía fresca con menta y un chorrito de limón", price: 5000, emoji: "🍉", cat: "frutal", badge: null },
+  { name: "Blue Lagoon", desc: "Mezcla especial de mora y arándano, visualmente impactante", price: 6500, emoji: "🫐", cat: "especial", badge: "new", badgeText: "Nuevo" },
+  { name: "Tamarindo Gold", desc: "Tamarindo tradicional con chile y azúcar, receta de la abuela", price: 5000, emoji: "🍬", cat: "especial", badge: null },
+];
+
+const badgeClass = { hot: "badge-hot", new: "badge-new", fav: "badge-fav" };
+
+function renderMenu(filter = "todos") {
+  const grid = document.getElementById('menuGrid');
+  grid.innerHTML = '';
+  items.filter(i => filter === "todos" || i.cat === filter).forEach(item => {
+    const card = document.createElement('div');
+    card.className = 'menu-card fade-in';
+    card.innerHTML = `
+      ${item.badge ? `<span class="card-badge ${badgeClass[item.badge]}">${item.badgeText}</span>` : ''}
+      <span class="card-emoji">${item.emoji}</span>
+      <div class="card-name">${item.name}</div>
+      <div class="card-desc">${item.desc}</div>
+      <div class="card-footer">
+        <span class="card-price">$${item.price.toLocaleString('es-CO')}</span>
+        <button class="add-btn" data-name="${item.name}">+</button>
+      </div>`;
+    grid.appendChild(card);
+    setTimeout(() => card.classList.add('visible'), 50);
+  });
+  document.querySelectorAll('.add-btn').forEach(btn => {
+    btn.addEventListener('click', e => { e.stopPropagation(); showToast(btn.dataset.name); });
+  });
+}
+
+/* ── FILTER TABS ── */
+document.querySelectorAll('.tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    renderMenu(btn.dataset.filter);
+  });
+});
+
+renderMenu();
+
+/* ── TOAST ── */
+function showToast(name) {
+  const t = document.getElementById('toast');
+  t.textContent = `✅ ${name} agregado al pedido`;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+/* ── BUILDER ── */
+const prices = [3500, 5000, 7000];
+const sizeLabels = ['Pequeño', 'Mediano', 'Grande'];
+let selBase = 'Fresa', selTopping = 'Chamoy', selSize = 1;
+
+function updatePreview() {
+  document.getElementById('previewName').textContent = `${selBase} con ${selTopping} · ${sizeLabels[selSize]}`;
+  document.getElementById('previewPrice').textContent = `$${prices[selSize].toLocaleString('es-CO')}`;
+}
+
+function makeGroup(id, onSelect) {
+  document.getElementById(id).querySelectorAll('.opt-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.getElementById(id).querySelectorAll('.opt-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      onSelect(btn.dataset.val);
+    });
+  });
+}
+
+makeGroup('baseGroup', v => { selBase = v; updatePreview(); });
+makeGroup('toppingGroup', v => { selTopping = v; updatePreview(); });
+document.getElementById('sizeSlider').addEventListener('input', e => { selSize = +e.target.value; updatePreview(); });
+
+document.getElementById('builderCta').addEventListener('click', () => {
+  showToast(`${selBase} · ${sizeLabels[selSize]}`);
+});
+
+updatePreview();
+
+/* ── SCROLL ANIMATIONS ── */
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.15 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+/* ── COUNTER ANIMATION ── */
+function animateCounter(el, target) {
+  const isLarge = target > 100;
+  const duration = isLarge ? 2000 : 1200;
+  const start = performance.now();
+  function update(now) {
+    const progress = Math.min((now - start) / duration, 1);
+    const ease = 1 - Math.pow(1 - progress, 3);
+    const val = Math.round(ease * target);
+    el.textContent = isLarge ? val.toLocaleString('es-CO') : val;
+    if (progress < 1) requestAnimationFrame(update);
+  }
+  requestAnimationFrame(update);
+}
+
+const counterObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      const target = +e.target.dataset.target;
+      animateCounter(e.target, target);
+      counterObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.stat-num[data-target]').forEach(el => counterObserver.observe(el));
+</script>
+</body>
+</html>
